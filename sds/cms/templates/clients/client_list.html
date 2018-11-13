@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div>
+	<a href = "/create/" >
+		<h3> Create New Client</h3>
+	</a>
+		
+</div>
+<div>
+	{% for client in clients %}
+		<div class = "client">
+			<a href ="{% url 'client-detail' client.id %}" >
+				<h3>{{ client.Client_FirstName|capfirst }}</h3>
+			</a>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}

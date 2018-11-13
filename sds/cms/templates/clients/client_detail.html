@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div>
+
+	<h3>{{ client.Client_FirstName|capfirst }} {{ client.Client_LastName|capfirst }}</h3>
+
+	<p>DOB : {{client.Client_DOB}}</p>
+	<p>Gender : {{client.Client_Gender}}</p>
+	<p>Service Provider : {{client.Client_ServiceProvider|capfirst}}</p>
+	<p>Communication Style = {{client.Client_CommunicationStyle}}</p>
+	
+	{% if client.Client_AdditionalServiceProvider %}
+		<p>Client_AdditionalServiceProvider : {{client.Client_AdditionalServiceProvider|capfirst}}</p>
+	{% endif %}
+	
+	{% if client.Client_Hobbie.all %}
+		<p> Hobbies : </p> 
+			<ul>
+				{% for Hobbie in client.Client_Hobbie.all %}
+					<li>{{Hobbie.Hobbie_Name|capfirst}}</li>
+				{% endfor %}
+			</ul>
+	{% endif %}
+
+	{% if client.Client_Likes.all %}
+		<p> Likes : </p> 
+			<ul>
+				{% for Likes in client.Client_Likes.all %}
+					<li>{{Likes.Likes_Name|capfirst}}</li>
+				{% endfor %}
+			</ul>
+	{% endif %}
+
+	{% if client.Client_Dislikes.all %}
+		<p> Dislikes : </p> 
+			<ul>
+				{% for Dislikes in client.Client_Dislikes.all %}
+					<li>{{Dislikes.Dislikes_Name|capfirst}}</li>
+				{% endfor %}
+			</ul>
+	{% endif %}
+	
+	{% if client.Client_FamilyMember.all %}
+		<p> Family Member : </p> 
+			<ul>
+				{% for FamilyMember in client.Client_FamilyMember.all %}
+					<li>{{FamilyMember.FamilyMember_FirstName|capfirst}} {{FamilyMember.FamilyMember_LastName|capfirst}} ({{FamilyMember.FamilyMember_Relationship}})</li>
+				{% endfor %}
+			</ul>
+	{% endif %}
+	
+	{% if client.Client_Friend.all %}
+		<p> Friends : </p> 
+			<ul>
+				{% for Friend in client.Client_Friend.all %}
+					<li>{{Friend.Friend_FirstName|capfirst}} {{Friend.Friend_LastName|capfirst}}</li>
+				{% endfor %}
+			</ul>
+	{% endif %}
+	
+	{% if client.Client_Behaviors.all %}
+		<p> Behaviors : </p> 
+			<ul>
+				{% for Behavior in client.Client_Behaviors.all %}
+					<li>{{Behavior.Behavior_Title|capfirst}}</li>
+				{% endfor %}
+			</ul>
+	{% endif %}
+	{% if client.Client_HealthcareProfessional.all %}
+		<p> Healthcare Professionals : </p> 
+			<ul>
+				{% for Professionals in client.Client_HealthcareProfessional.all %}
+					<li>{{Professionals.HealthcareProfessional_FirstName|capfirst}}</li>
+				{% endfor %}
+			</ul>
+	{% endif %}
+	
+	{% if client.HouseMates.all %}
+		<p> HouseMates : </p> 
+			<ul>
+				{% for HouseMates in client.HouseMates.all %}
+					<li>{{HouseMates.HouseMates_FirstName|capfirst}} {{HouseMates.HouseMates_LastName|capfirst}}</li>
+				{% endfor %}
+			</ul>
+	{% endif %}
+	
+	{% if client.Client_Assessments.all %}
+		<p> Assessments : </p> 
+			<ul>
+				{% for Assessments in client.Client_Assessments.all %}
+					<li>{{Assessments.Assessment_type|capfirst}}</li>
+				{% endfor %}
+			</ul>
+	{% endif %}
+	
+
+</div>
+{% endblock %}

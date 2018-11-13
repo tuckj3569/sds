@@ -1,0 +1,87 @@
+{% load static %}
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Client Management System</title>
+        <link rel="stylesheet" id="ample-style-css" href="{% static 'style.css' %}" type="text/css" media="all">
+		<style>
+#navul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#navli {
+    float: left;
+}
+
+#navli a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navli a:hover {
+    background-color: #111;
+}
+</style>
+    </head>
+    <body class="wide">
+	<ul id=navul>
+
+  <li id=navli><a class="active" href="/">Home</a></li>
+<!--  <li><a class="active" href="/">Home</a></li>
+  <li id=navli><a href="/vehicles">Vehicles</a></li>
+  <li id=navli><a href="/booking">Booking</a></li>
+  <li id=navli><a href="/locations">Locations</a></li>
+  <li id=navli><a href="/deals">Deals</a></li>
+  <li id=navli><a href="/services">Services</a></li>
+  <li id=navli><a href="/about">About</a></li>
+  <li id=navli><a href="/accounts/login/">Login</a></li>
+  <li id=navli><a href="/accounts/logout/">Logout</a></li>
+  <li id=navli><a href="/accounts/signup/">Signup</a></li> -->
+  
+</ul>
+
+        <div id="page" class="hfeed">
+            <header>
+                <div class="header">
+                    <div class="main-head-wrap inner-wrap clearfix">
+                        <div id="header-logo-image">
+                            <a href="/">
+                                <img src="{% static '/images/logo.png' %}" alt="Client Management System">
+                            </a>
+                        </div>
+                        <div id="header-text" class="">
+                            <h1 id="site-title">
+                                <a href="/" title="Client Management System" rel="home">Client Management System</a>
+                            </h1>
+                            <p>Because peopele are what matter!</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="main-wrapper">
+                <div class="single-page clearfix">
+                    <div class="inner-wrap">
+                        <hr>
+                        <div>
+                        {% block content %}
+						{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="colophon">
+                <div class="inner-wrap">
+                    Client Management System is for a learning assesment. Any resemblance to real brands, products, or people is purely coincidental.
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
+`
