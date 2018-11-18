@@ -17,6 +17,9 @@ def client_detail(request, id):
 	client = Client.objects.get(id = id)
 	return render(request, 'clients/client_detail.html', {'client':client})
 	
+def fba_tool(request):
+	return render(request, 'fba-tool.html')
+
 def client_create(request):
 	if request.POST:
 		form = forms.ClientCreate(request.POST)

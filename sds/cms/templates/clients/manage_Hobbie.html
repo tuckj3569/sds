@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
+
+<ul id=navul>
+
+  <li id=navli><a class="active" href="../hobbie/">Hobbie</a></li>
+  <li id=navli><a class="active" href="../like">like</a></li>
+  <li id=navli><a href="../dislike">dislike</a></li>
+  <li id=navli><a href="../familymember">familymember</a></li>
+  <li id=navli><a href="../friend">friend</a></li>
+  <li id=navli><a href="../healthcareprofessional">healthcareprofessional</a></li>
+  <li id=navli><a href="../assessment">assessment</a></li>
+  <li id=navli><a href="../housemates">housemates</a></li>
+  <li id=navli><a href="../behavior/login/">behavior</a></li>
+  <div align="right">
+    <li id=navli><a href="../">Profile</a></li>
+  </div>
+</ul>
+
 	<div class = "create client">
 	<h2> Hobbies </h2>
 	<form class="site-form" action= "" method="post"> {% csrf_token %}

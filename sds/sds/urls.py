@@ -10,6 +10,7 @@ urlpatterns = [
 	
 	path('create/', views.client_create),
 	path('client-list/', views.client_list),
+	path('fba-tool/', views.fba_tool),
 	re_path(r'^client/(\d+)/$', views.client_detail, name='client-detail'),
 	re_path(r'^client/(\d+)/hobbie/', views.manage_Hobbie, name='manage-hobbie'),
 	re_path(r'^client/(\d+)/like/', views.manage_Like, name='manage-like'),

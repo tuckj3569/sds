@@ -4,7 +4,10 @@
 <div>
 
 	<h3>{{ client.Client_FirstName|capfirst }} {{ client.Client_LastName|capfirst }}</h3>
-
+	<div align="right">
+  <a href="hobbie/">edit</a>
+</div>
+	
 	<p>DOB : {{client.Client_DOB}}</p>
 	<p>Gender : {{client.Client_Gender}}</p>
 	<p>Service Provider : {{client.Client_ServiceProvider|capfirst}}</p>
