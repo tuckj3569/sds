@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "manage_Base.html" %}
 {% block content %}
 {% load static %}
 	<div class = "create client">
@@ -6,7 +6,6 @@
 	<form class="site-form" action= "" method="post"> {% csrf_token %}
 	<table>
 	{{ formset.management_form }}
-	{{ like.management_form }}
 		{% for form in formset %}
 			{{ form }}
 			

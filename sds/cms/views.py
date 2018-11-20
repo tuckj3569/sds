@@ -18,6 +18,21 @@ def client_detail(request, id):
 	return render(request, 'clients/client_detail.html', {'client':client})
 	
 def fba_tool(request):
+	if request.POST:
+		form = forms.FBATool(request.POST)
+		if form.is_valid():
+			new_FBA = form.save()
+			
+			return render(request, 'fba-tool.html', {'form':form})
+			#return HttpResponseRedirect(reverse('manage-hobbie', args=[new_FBA.pk],))
+	else:
+		form = forms.FBATool()
+
+	return render(request, 'fba-tool.html', {'form':form})
+
+
+
+
 	return render(request, 'fba-tool.html')
 
 def client_create(request):

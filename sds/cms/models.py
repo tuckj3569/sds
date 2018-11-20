@@ -125,7 +125,20 @@ class HouseMates(models.Model):
 	def __str__(self):
 		return '%s %s' % (self.HouseMates_FirstName, self.HouseMates_LastName)
 
-
+class FBATool(models.Model):
+	 
+	FBATool = models.ForeignKey('Client', on_delete=models.CASCADE,related_name="Client_FBA")
+	FBATool_Title = models.CharField(max_length=30, blank=True)
+	FBATool_Date = models.DateField(auto_now=True)
+	FBATool_Brief  = models.TextField(blank=True)
+	FBATool_Setting = models.CharField(max_length=30, blank=True)
+	FBATool_Antecedent = models.CharField(max_length=30, blank=True)
+	FBATool_Behaviour = models.CharField(max_length=30, blank=True)
+	FBATool_Function = models.CharField(max_length=30, blank=True)
+	FBATool_Consequence = models.CharField(max_length=30, blank=True)
+	
+	def __str__(self):
+		return '%s' % (self.FBATool_Title)
 
 
 		
